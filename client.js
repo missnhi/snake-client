@@ -24,6 +24,10 @@ const connect = function() {
     console.log("Server says: ", data);
   });
   
+  setInterval(() => {
+    conn.write("Move: up");
+  }, 50);
+  
   return conn;
 };
 
