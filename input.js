@@ -12,20 +12,24 @@ const setupInput = function(conn) {
 
 const handleUserInput = function(key) {
   // \u0003 maps to ctrl+c input
-  if (key === "\u0003") {
-    process.exit();
-  }
-  if (key === 'w') {
-    connection.write("Move: up");
-  }
-  if (key === "a") {
-    connection.write("Move: left");
-  }
-  if (key === "s") {
-    connection.write("Move: down");
-  }
-  if (key === "d") {
-    connection.write("Move: right");
+  switch (key) {
+    case "\u0003":
+      process.exit();
+      break;
+    case "w":
+      connection.write("Move: up");
+      break;
+    case "a":
+      connection.write("Move: left");
+      break;
+    case "s":
+      connection.write("Move: down");
+      break;
+    case "d":
+      connection.write("Move: right");
+      break;
+    case "1":
+      connection.write("Say: Nhi is the best!");
   }
 };
 
